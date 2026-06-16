@@ -13,5 +13,4 @@
     <input type="password" name="contrasena"><br>
 
     <input type="submit" value="Registrar">
-
 </form>

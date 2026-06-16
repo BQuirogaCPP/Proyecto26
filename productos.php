@@ -31,10 +31,27 @@ while($fila = $resultado->fetch_assoc()){
     echo "<td>".$fila["nombre"]."</td>";
     echo "<td>".$fila["descripcion"]."</td>";
     echo "<td>".$fila["precio"]."</td>";
+    echo "<td>
+            <a href='producto.php?codigo=".$fila["codigo"]."'>
+                <button>Mostrar</button>
+            </a>
 
+            <a href='editarProducto.php?codigo=".$fila["codigo"]."'>
+                <button>Editar</button>
+            </a>
+
+            <a href='eliminar.php?codigo=".$fila["codigo"]."'>
+                <button>Eliminar</button>
+            </a>
+          </td>";
+
+    echo "</tr>";
     echo "</tr>";
 }
 
 echo "</table>";
+echo "<a href='formPedido.php'>
+        <button>Generar Nuevo Pedido</button>
+      </a><br><br>";
 
 ?>
