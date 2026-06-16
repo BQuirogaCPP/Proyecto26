@@ -15,6 +15,15 @@ $sql = "SELECT * FROM producto";
 
 $resultado = $conn->query($sql);
 
+$sqlTotal="SELECT sum(costototal) FROM carrito where Pedido_id='$id_pedido'";
+$resultadoTotal=$conn->query($sqlTotal);
+$res = $resultadoTotal->fetch_assoc();
+$total=$res['sum(costototal)'];
+if($res['sum(costototal)']==null){
+    $total=0;
+}
+
+echo "<h3>Total: ".$total."</h3>";
 echo "<table border='1'>";
 
 echo "<tr>
@@ -37,7 +46,6 @@ while($fila = $resultado->fetch_assoc()){
                     <button>Mostrar</button>
                 </a>
             </td>";
-        echo "<label>Cantidad</label>";
         echo "<input type='hidden' value=".$fila["codigo"]." name='codigo'>";
         echo "<input type='hidden' value=".$id_pedido." name='idpedido'>";
         echo "<input type='hidden' value=".$fila["precio"]." name='precio'>";
