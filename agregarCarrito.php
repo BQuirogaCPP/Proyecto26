@@ -26,7 +26,10 @@ if($conn->query($sql)){
     echo "Producto agregado al carrito";
     header("location: miCarrito.php?idPedido=".$idpedido);
 }else{
-    echo "Error: ".$conn->error;
+    echo "El producto ya se agregó";
+    echo "<a href='fmiCarrito.php?idPedido=$idpedido'>
+        <button>Volver a Pedidos</button>
+      </a>";
 }
 
 
