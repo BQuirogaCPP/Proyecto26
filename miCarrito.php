@@ -67,5 +67,5 @@ echo "</table>";
 echo "<a href='formPedido.php'>
         <button>Generar Nuevo Pedido</button>
       </a><br><br>";
-
 ?>
+<a href='verPedido.php?idPedido=<?=$id_pedido?>'><button>Ver Pedido</button></a><br><br>

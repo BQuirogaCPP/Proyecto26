@@ -45,7 +45,11 @@ while($fila = $resultado->fetch_assoc()){
             echo "<td>".$fila["descripcion"]."</td>";
             echo "<td>".$fila["precio"]."</td>";
             echo "<td></td>";
-            echo "<td style='background-color: #df3f3f;'>".$filaCarrito["cantidad"]."</td>";
+            echo "<td style='background-color: #4f5f7c;'>".$filaCarrito["cantidad"]."</td>";
+?>
+            <td><a href="aceptarVenta.php?id=<?php echo $id_pedido; ?>">Aceptar </a></td>
+            <td><a href="rechazarVenta.php?id=<?php echo $id_pedido; ?>">Rechazar</a></td>
+<?php
             echo "</tr>";
         }
     }

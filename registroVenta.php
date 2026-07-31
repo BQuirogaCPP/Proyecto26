@@ -13,7 +13,7 @@
     $fecha=$_POST["fecha"];
     $estado=$_POST["estado"];
     $total=$_POST["total"];
-    $sql="INSERT INTO Venta (Pedido_id,Fecha,Total,Estado) VALUES ('$pedido','$fecha','$total','$estado')";
+    $sql="INSERT INTO Ventas (Pedido_id,Fecha,Total,Estado) VALUES ('$pedido','$fecha','$total','$estado')";
     if($conn->query($sql))
     {
 
@@ -23,7 +23,7 @@
         while($fila=$resultado->fetch_assoc())
         {
             $codigo=$fila["Producto_codigo"];
-            $cantidad=$fila["Cantidad"];
+            $cantidad=$fila["cantidad"];
             // Obtener stock actual
             $sql2="SELECT stock FROM producto WHERE codigo='$codigo'";
             $r2=$conn->query($sql2);
