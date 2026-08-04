@@ -20,7 +20,7 @@ $sql = "INSERT INTO producto (codigo,nombre,descripcion,precio) VALUES ('$codigo
 if($conn->query($sql)){
 
     //Define a que carpeta irá el archivo
-    $target_dir = "../media/";
+    $target_dir = "media/";
     //recuperar el tipo de archivo (extension)
     $imageFileType = strtolower(pathinfo($_FILES["fileToUpload"]["name"],PATHINFO_EXTENSION));
     //Define el nombre del archivo P-[codigo del producto]
