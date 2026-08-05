@@ -15,8 +15,15 @@ $codigo = $_POST["codigo"];
 $nombre = $_POST["nombre"];
 $descripcion = $_POST["descripcion"];
 $precio = $_POST["precio"];
+$stock=$_POST["stock"];
+$imagen=$_POST["imagen"];
+$estado=$_POST["estado"];
 
-$sql = "INSERT INTO producto (codigo,nombre,descripcion,precio) VALUES ('$codigo','$nombre','$descripcion','$precio')";
+$sql = "INSERT INTO producto
+(nombre,descripcion,precio,stock,imagen,estado)
+VALUES
+('$nombre','$descripcion','$precio','$stock','$imagen','$estado')";
+
 if($conn->query($sql)){
 
     //Define a que carpeta irá el archivo
