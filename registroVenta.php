@@ -35,6 +35,8 @@
             $conn->query($sql3);
         }
         echo "<h2>Venta registrada correctamente</h2>";
+        header("Location: ventas.php");
+
     }
     else
     {
