@@ -75,6 +75,25 @@ CREATE TABLE IF NOT EXISTS `mitienda`.`Carrito` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `mitienda`.`Ventas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mitienda`.`Ventas` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `Fecha` DATE NULL,
+  `Total` INT NULL,
+  `Estado` VARCHAR(45) NULL,
+  `Pedido_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `Pedido_id`),
+  INDEX `fk_Ventas_Pedido1_idx` (`Pedido_id` ASC) VISIBLE,
+  CONSTRAINT `fk_Ventas_Pedido1`
+    FOREIGN KEY (`Pedido_id`)
+    REFERENCES `mitienda`.`Pedido` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
