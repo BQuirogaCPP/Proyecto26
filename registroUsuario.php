@@ -13,7 +13,7 @@ $nombre = $_POST["nombre"];
 $direccion = $_POST["direccion"];
 $contrasena = $_POST["contrasena"];
 
-$sql = "INSERT INTO usuario
+$sql = "INSERT INTO Usuario
 (CI,Nombre,Direccion,Contrasena)
 VALUES
 ('$ci','$nombre','$direccion','$contrasena')";
